@@ -1,0 +1,16 @@
+zuul:
+  routes:
+   # 写法一:/myProduct/product/list -----> /product/product/list
+    aaa:
+      #路由地址
+      path: /myProduct/**
+      #服务名
+      serviceId: product
+      #sensitiveHeaders设置为空
+      sensitive-headers:
+  # 写法二:/myProduct/product/list -----> /product/product/list
+#   product: /myProduct/**
+  #排除其他路由
+  ignored-patterns:
+    #拦截/product/product/listForOrder  /myProduct/product/listForOrder
+    - /**/product/listForOrder
